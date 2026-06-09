@@ -79,15 +79,37 @@ const TabsLayout = () => {
         }}
       />
 
-            <Tabs.Screen
+      <Tabs.Screen
         //This name has to exactly match the file name without extension
         name="profile"
         options={{
           title: "Profile",
           tabBarBadge: 4,
-          tabBarBadgeStyle:{ backgroundColor: '#DC2626', color:"#FFFFFF", fontSize: 10},
+          tabBarBadgeStyle: {
+            backgroundColor: "#DC2626",
+            color: "#FFFFFF",
+            fontSize: 10,
+          },
           tabBarIcon: ({ color, size, focused }) => (
-            <Ionicons name={focused ? "person" : "person-outline" } size={size} color={color} />
+            <Ionicons
+              name={focused ? "person" : "person-outline"}
+              size={size}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        //This name has to exactly match the file name without extension
+        name="settings"
+        options={{
+          title: "Settings",
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons
+              name={focused ? "settings" : "settings-outline"}
+              size={size}
+              color={color}
+            />
           ),
         }}
       />
