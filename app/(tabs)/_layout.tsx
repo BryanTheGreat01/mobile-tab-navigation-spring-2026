@@ -60,6 +60,7 @@ const TabsLayout = () => {
         name="courses"
         options={{
           title: "Courses",
+          headerShown: false,
           tabBarIcon: ({ color, size, focused }) => (
             <Ionicons
               name={focused ? "book" : "book-outline"}
