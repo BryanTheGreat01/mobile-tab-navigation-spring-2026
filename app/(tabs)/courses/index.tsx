@@ -1,6 +1,6 @@
-import { StyleSheet, Text, View, ScrollView } from "react-native";
+import { StyleSheet, Text, View, ScrollView, Pressable } from "react-native";
+import { useRouter } from "expo-router";
 import React from "react";
-
 
 export const COURSES = [
   {
@@ -48,18 +48,28 @@ export const COURSES = [
 ];
 
 const Courses = () => {
+  const router = useRouter();
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.content}>
         <Text style={styles.title}>My Courses</Text>
         {COURSES.map((course) => (
-          <View key={course.code} style={styles.card}>
+          <Pressable
+            key={course.code}
+            style={styles.card}
+            onPress={() =>
+              router.push({
+                pathname: "/courses/[id]",
+                params: { id: course.code },
+              })
+            }
+          >
             <View style={styles.row}>
               <Text style={styles.code}>{course.code}</Text>
               <Text style={styles.credit}>{course.credit} cr</Text>
             </View>
             <Text style={styles.courseTitle}> {course.title}</Text>
-          </View>
+          </Pressable>
         ))}
       </ScrollView>
     </View>

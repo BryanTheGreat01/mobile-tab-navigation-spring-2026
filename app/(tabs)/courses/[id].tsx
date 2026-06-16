@@ -43,6 +43,14 @@ const CourseDetailsPage = () => {
         <Text style={styles.title}>{course.title}</Text>
         <Text style={styles.body}>{course.description}</Text>
 
+        <View style={styles.card}>
+            <Row label="Instructor" value={course.instructor}/>
+            <Row label="Credits" value={course.credit}/>
+            <Row label="Room" value={course.room}/>
+        </View>
+        <Pressable style={styles.btn} onPress={()=> router.push('/courses')}>
+            <Text style={styles.btnText}>Back to Course List</Text>
+        </Pressable>
       </ScrollView>
     </View>
   );
@@ -105,3 +113,13 @@ const styles = StyleSheet.create({
     marginRight: 4,
   },
 });
+
+// Simple Row component for label/value pairs
+function Row({ label, value }: { label: string; value: string | number }) {
+  return (
+    <View style={styles.row}>
+      <Text style={styles.rowLabel}>{label}</Text>
+      <Text style={styles.rowValue}>{value}</Text>
+    </View>
+  );
+}
