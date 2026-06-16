@@ -12,8 +12,8 @@
  *   7. href: null  → hide a tab button but keep the route reachable
  */
 
-import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
+import { Tabs } from "expo-router";
 
 const TabsLayout = () => {
   return (
@@ -45,7 +45,7 @@ const TabsLayout = () => {
         //This name has to exactly match the file name without extension
         name="index"
         options={{
-          title: "Home",
+          title: "H0me",
           tabBarIcon: ({ color, size, focused }) => (
             <Ionicons
               name={focused ? "home" : "home-outline"}
